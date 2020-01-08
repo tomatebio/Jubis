@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <form action="{{ url_for('buscar_num') }}" method="post">
+
+        <fieldset>
+          <div class="form-group">
+            <label for="numero">Numero</label>
+            <input type="text" id="numero" name="numero" class="form-control">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-salvar">Buscar</button>
+          <a class="btn btn-danger" href="{{ url_for('index') }}">Voltar</a>
+        </fieldset>
+    </form>
+{% endblock %}

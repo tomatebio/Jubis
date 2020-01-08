@@ -1,0 +1,33 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <a class="btn btn-primary" href="{{ url_for('form_busca_patrimonio') }}">Busca por número</a>
+     <a class="btn btn-primary" href="{{ url_for('form_busca_sala') }}">Busca por sala</a>
+        <table class="table table-striped table-responsive table-bordered">
+            <thead class="thead-default">
+                <tr>
+                    <th>Patrimonio</th>
+                    <th>Descricao</th>
+                    <th>Local</th>
+                    <th>Status</th>
+                    <th> </th>
+
+                </tr>
+            </thead>
+            <tbody>
+            {% for bem in bens %}
+                <tr>
+
+
+                    <td>{{ bem.patrimonio}}</td>
+                    <td>{{ bem.descricao}}</td>
+                    <td>{{ bem.local }}</td>
+                    <td>{{ bem.status }} </td>
+                    <td>
+                        <a class="btn btn-primary" href="{{ url_for('editar', id = bem.patrimonio) }}">Editar</a>
+                    </td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}

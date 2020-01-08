@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <form action="{{ url_for('buscar_sala') }}" method="post">
+
+        <fieldset>
+          <div class="form-group">
+            <label for="sala">Sala</label>
+            <input type="text" id="sala" name="sala" class="form-control">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+          <a class="btn btn-danger" href="{{ url_for('index') }}">Voltar</a>
+        </fieldset>
+    </form>
+{% endblock %}

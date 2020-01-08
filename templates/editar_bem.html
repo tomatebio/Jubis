@@ -1,0 +1,36 @@
+{% extends "template.html" %}
+{% block conteudo %}
+      <form action="{{ url_for('atualizar') }}" method="post">
+        <figure class="thumb col-md-4">
+        <input type="hidden" name="patrimonio" value="{{bem.patrimonio}}">
+            <h2> Número do patrimonio: {{bem.patrimonio}}</h2>
+            <input type="hidden" name="descricao" value="{{bem.descricao}}">
+          <h3>Descricao</h3>
+          <p>{{bem.descricao}}</p>
+        <fieldset>
+        <div class="form-group">
+            <label for="local">Local</label>
+            <input type="text" id="local" name="local" class="form-control" value="{{ bem.local }}">
+          </div>
+          <div class="form-group">
+
+            <label for="status">Status</label>
+
+
+
+        <select   id=status name="status" >
+            <option value=" "</option>
+            <option value="Não encontrado" {% if bem.status=="Não encontrado" %} selected {% else %} {% endif %}>Não encontrado</option>
+
+            <option value= "Bom"  {% if bem.status=="Bom" %} selected {% else %} {% endif %} >Bom</option>
+            <option value= "3" {% if bem.status=="Ocioso" %} selected {% else %} {% endif %} >Ocioso</option>
+            <option value = "4" {% if bem.status=="Inservivel" %} selected {% else %} {% endif %}>Inservivel</option>
+        </select>
+
+         </div>
+          <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+          <a class="btn btn-danger" href="{{ url_for('index') }}">Voltar</a>
+        </fieldset>
+      </form>
+{% endblock %}
+

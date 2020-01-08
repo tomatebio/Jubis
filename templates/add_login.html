@@ -1,0 +1,47 @@
+{% extends "template.html" %}
+{% block conteudo %}
+      <form action="{{ url_for('autentica_login') }}" method="post">
+          <fieldset>
+        <div class="form-group">
+            <label for="root">Administrador</label>
+            <input type="text" id="root" name="root" class="form-control">
+          </div>
+       <div class="form-group">
+            <label for="root_senha">Senha</label>
+            <input type="password" id="root_senha" name="root_senha" class="form-control">
+          </div>
+
+                  <div class="form-group">
+
+           <label for="id">id</label>
+           <input  type="text" id= "id" name="id" required>
+
+       </div>
+       <div class="form-group">
+
+           <label for="usuario">Novo usuario</label>
+           <input  type="text" id= "usuario" name="usuario" required>
+
+       </div>
+                <div class="form-group">
+
+           <label for="email">email</label>
+           <input  type="email" id= "email" name="email" required>
+
+       </div>
+
+              <div class="form-group">
+
+           <label for="senha1">Senha</label>
+           <input  type="password" id= "senha1" name="senha1" required>
+                  <div class="form-group">
+            <label for="senha2">Repita a senha</label>
+           <input  type="password" id= "senha2" name="senha2" required>
+       </div>
+
+
+         <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+          <a class="btn btn-danger" href="{{ url_for('index') }}">Voltar</a>
+        </fieldset>
+      </form>
+{% endblock %}

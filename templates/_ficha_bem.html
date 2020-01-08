@@ -1,0 +1,25 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <a class="btn btn-primary" href="{{ url_for('form_busca_patrimonio') }}">Nova busca</a>
+
+        <table class="table table-striped table-responsive table-bordered">
+            <thead class="thead-default">
+                <tr>
+                    <th>Bem requisitado</th>
+                     </tr>
+            </thead>
+            <tbody>
+
+                 <td>Número</td> <td>{{ bem.patrimonio}}</td>
+                    </tr> <tr>
+                 <td>Descricao</td>   <td>{{ bem.descricao}}</td>
+                     </tr> <tr>
+                  <td>Sala</td>  <td>{{ bem.local }}</td>
+                     </tr> <tr>
+                    <td>Status</td><td>{{ bem.status }}</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+{% endblock %}
