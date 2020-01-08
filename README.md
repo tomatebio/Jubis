@@ -1,2 +1,0 @@
-# Jubis
-Sistema de inventario
